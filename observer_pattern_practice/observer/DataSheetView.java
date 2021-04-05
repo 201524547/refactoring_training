@@ -4,7 +4,7 @@ import java.util.List;
 
 import observer_pattern_practice.subject.ScoreRecord;
 
-public class DataSheetView {
+public class DataSheetView implements Observer {
 	private ScoreRecord scoreRecord;
 	private int viewCount;
 

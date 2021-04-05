@@ -5,7 +5,7 @@ import java.util.List;
 
 import observer_pattern_practice.subject.ScoreRecord;
 
-public class MinMaxView { 
+public class MinMaxView implements Observer { 
 	private ScoreRecord scoreRecord;
 
 	public MinMaxView(ScoreRecord scoreRecord) {
