@@ -9,8 +9,10 @@ import factory_pattern_practice.scheduler.ElevatorScheduler;
 
 public class ElevatorManager {
 	private List<ElevatorController> controllers;
-
-	public ElevatorManager(int controllerCount) {
+	private SchedulerFactory schedulerFactory;
+	
+	public ElevatorManager(int controllerCount, SchedulerFactory schedulerFactory) {
+		this.schedulerFactory = schedulerFactory;
 		controllers = new ArrayList<ElevatorController>(controllerCount);
 		for (int i = 0; i < controllerCount; i++) {
 			ElevatorController controller = new ElevatorController(i + 1);
@@ -19,7 +21,7 @@ public class ElevatorManager {
 	}
 
 	void requestElevator(int destination, Direction direction) {
-		ElevatorScheduler scheduler = SchedulerFactory.getScheduler();
+		ElevatorScheduler scheduler = schedulerFactory.getScheduler();
 		int selectedElevator = scheduler.selectElevator(this, destination, direction);
 		controllers.get(selectedElevator).gotoFloor(destination);
 	}
