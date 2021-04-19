@@ -1,4 +1,4 @@
-package facadePattern;
+package facadePattern.orderController;
 
 public class NotEnoughBalanceException extends RuntimeException {
 	private final Order order;

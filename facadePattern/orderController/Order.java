@@ -1,4 +1,6 @@
-package facadePattern;
+package facadePattern.orderController;
+
+import facadePattern.Customer;
 
 public class Order {
 	private final Customer customer;
